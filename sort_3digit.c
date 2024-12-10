@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:53:24 by flima             #+#    #+#             */
-/*   Updated: 2024/12/05 19:37:51 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/09 15:43:42 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,41 @@
 
 void	sort_3digit(t_stack_a_b *stacks, char ch)
 {
-	int		top;
-	int		mid;
-	int		bot;
+	int		top_mid_bot[3];
 	t_stack	*head;
 
 	if (ch == 'a')
 		head = stacks->stack_a;
 	else
 		head = stacks->stack_b;
-	top = head->content;
-	mid = head->next->content;
-	bot = head->next->next->content;
-	cases(top, mid, bot, stacks, ch);
+	top_mid_bot[0] = head->content;
+	top_mid_bot[1] = head->next->content;
+	top_mid_bot[2] = head->next->next->content;
+	cases(top_mid_bot, stacks, ch);
 }
 
-void	cases(int t, int m, int b, t_stack_a_b *stcks, char ch)
+void	cases(int *TMB, t_stack_a_b *stcks, char ch)
 {
-	if (t > m && m < b && b > t)
+	if (TMB[0] > TMB[1] && TMB[1] < TMB[2] && TMB[2] > TMB[0])
 		ft_swap(stcks, ch);
-	else if (t > m && m > b && b < t)
+	else if (TMB[0] > TMB[1] && TMB[1] > TMB[2] && TMB[2] < TMB[0])
 	{
 		ft_swap(stcks, ch);
 		ft_reverse_rotate(stcks, ch);
 	}
-	else if (t > m && m < b && b < t)
+	else if (TMB[0] > TMB[1] && TMB[1] < TMB[2] && TMB[2] < TMB[0])
 		ft_rotate(stcks, ch);
-	else if (t < m && m > b && b > t)
+	else if (TMB[0] < TMB[1] && TMB[1] > TMB[2] && TMB[2] > TMB[0])
 	{
 		ft_swap(stcks, ch);
 		ft_rotate(stcks, ch);
 	}
-	else if (t < m && m > b && b < t)
+	else if (TMB[0] < TMB[1] && TMB[1] > TMB[2] && TMB[2] < TMB[0])
 		ft_reverse_rotate(stcks, ch);
+}
+
+void	sort_2digit(t_stack_a_b *stacks)
+{
+	if (!ft_issorted(stacks, 'a'))
+		ft_swap(stacks, 'a');
 }

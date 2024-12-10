@@ -6,16 +6,14 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/05 19:35:40 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/09 20:49:49 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_erros(int ac, char **av)
+void	check_erros(char **av)
 {
-	if (ac == 1)
-		exit(0);
 	check_if_digit(av);
 	check_int_size(av);
 }
@@ -25,7 +23,7 @@ void	check_if_digit(char **av)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		j = 0;
@@ -68,7 +66,9 @@ void	check_duplicate(t_stack *listA)
 {
 	int		check;
 	t_stack	*tmp;
+	t_stack *to_free;
 
+	to_free = listA;
 	while (listA != NULL)
 	{
 		check = 0;
@@ -78,7 +78,10 @@ void	check_duplicate(t_stack *listA)
 			if (listA->content == tmp->content)
 				check += 1;
 			if (check == 2)
+			{
+				clear_stack(&to_free);
 				print_error_exit();
+			}
 			tmp = tmp->next;
 		}
 		listA = listA->next;

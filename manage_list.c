@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:48:53 by flima             #+#    #+#             */
-/*   Updated: 2024/12/02 19:25:04 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/10 14:07:35 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,32 +24,32 @@ t_stack	*new_node(int nb)
 	return (node);
 }
 
-t_stack	*creat_stack(int argc, char **argv)
+t_stack	*creat_stack(char **argv)
 {
-	t_stack	*head;
 	t_stack	*tmp;
+	t_stack	*head;
 	int		i;
 
-	i = 1;
-	head = new_node(ft_atoi(argv[i]));
+	i = 0;
+	head = new_node(ft_atoi(argv[i++]));
 	tmp = head;
-	while (++i < argc)
+	while (argv[i])
 	{
-		tmp->next = new_node(atoi(argv[i]));
+		tmp->next = new_node(atoi(argv[i++]));
 		tmp = tmp->next;
 	}
 	return (head);
 }
 
-void	clear_stack(t_stack *list)
+void	clear_stack(t_stack **list)
 {
 	t_stack	*tmp;
 
-	while (list != NULL)
+	while (*list != NULL)
 	{
-		tmp = list->next;
-		free(list);
-		list = tmp;
+		tmp = (*list)->next;
+		free(*list);
+		*list = tmp;
 	}
 }
 
