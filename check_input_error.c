@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/09 20:49:49 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/17 15:10:43 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	check_duplicate(t_stack *listA)
 				check += 1;
 			if (check == 2)
 			{
-				clear_stack(&to_free);
+				free_stack(&to_free);
 				print_error_exit();
 			}
 			tmp = tmp->next;

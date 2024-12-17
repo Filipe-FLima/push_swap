@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/10 19:33:44 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:05:58 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,19 @@ bool	ft_issorted(t_stack_a_b *stacks, char ch);
 //sorting functions
 void	ft_sorting(t_stack_a_b *stacks);
 void	sort_3digit(t_stack_a_b *stacks, char ch);
+void	sort_3digit_exit(t_stack_a_b *stacks, char ch);
 void	cases(int *TMB, t_stack_a_b *stcks, char ch);
 void	sort_2digit(t_stack_a_b *stacks);
 void	sort_4digit(t_stack_a_b *stacks);
+int		find_index(t_stack_a_b *stacks, int nb, char ch);
+void	count_ra_rra(t_stack_a_b *stacks, int i, int size);
+void	domove_rra_ra(t_stack_a_b *stacks, int ra, int rra);
+void	newmin_a(t_stack_a_b *stacks);
+void	find_min(t_stack_a_b *stacks, t_stack *head, char ch);
+void	find_max(t_stack_a_b *stacks, t_stack *head, char ch);
+void	find_max_min(t_stack_a_b *stacks, char ch);
+void	newmax_a(t_stack_a_b *stacks);
+void	count_ra_rra_max(t_stack_a_b *stacks, int i, int size);
 
 
 #endif
