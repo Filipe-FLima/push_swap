@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:08:50 by flima             #+#    #+#             */
-/*   Updated: 2024/12/09 15:32:22 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:10:28 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	ft_issorted(t_stack_a_b *stacks, char ch)
 {
 	t_stack	*head;
-	
+
 	if (ch == 'a')
 		head = stacks->stack_a;
 	else

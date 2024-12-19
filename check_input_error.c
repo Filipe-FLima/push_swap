@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/17 15:10:43 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:00:08 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	check_duplicate(t_stack *listA)
 {
 	int		check;
 	t_stack	*tmp;
-	t_stack *to_free;
+	t_stack	*to_free;
 
 	to_free = listA;
 	while (listA != NULL)

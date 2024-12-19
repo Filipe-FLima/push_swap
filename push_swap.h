@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/17 18:05:58 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 19:59:27 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_values
 	int				min_a;
 	int				max_b;
 	int				min_b;
-}					t_value;
+}					t_values;
 
 //list management
 t_stack	*new_node(int nb);
@@ -45,7 +45,7 @@ t_stack	*creat_stack(char **argv);
 int		count_nodes(t_stack *list);
 t_stack	*last_node(t_stack *head);
 t_stack	*creat_stack_quoted(t_stack *head, char **args);
-char **ft_quoted_arg(char **argv);
+char	**ft_quoted_arg(char **argv);
 //free functions
 void	free_quoted_argv(char **argv);
 void	free_stack(t_stack **list);
@@ -76,15 +76,18 @@ void	sort_3digit_exit(t_stack_a_b *stacks, char ch);
 void	cases(int *TMB, t_stack_a_b *stcks, char ch);
 void	sort_2digit(t_stack_a_b *stacks);
 void	sort_4digit(t_stack_a_b *stacks);
+void	move_back_a(t_stack_a_b *stacks);
 int		find_index(t_stack_a_b *stacks, int nb, char ch);
-void	count_ra_rra(t_stack_a_b *stacks, int i, int size);
-void	domove_rra_ra(t_stack_a_b *stacks, int ra, int rra);
-void	newmin_a(t_stack_a_b *stacks);
+void	count_ra_rra(t_stack_a_b *stacks, int i, int size, int check);
+void	domove_rra_ra(t_stack_a_b *stacks, int ra, int rra, int check);
+void	newmin_a(t_stack_a_b *stacks, int check);
 void	find_min(t_stack_a_b *stacks, t_stack *head, char ch);
 void	find_max(t_stack_a_b *stacks, t_stack *head, char ch);
 void	find_max_min(t_stack_a_b *stacks, char ch);
 void	newmax_a(t_stack_a_b *stacks);
 void	count_ra_rra_max(t_stack_a_b *stacks, int i, int size);
-
+void	add_mid_element(t_stack_a_b *stacks);
+int		serch_next_element(t_stack_a_b *stacks, int topb);
+void	organize_stack_a(t_stack_a_b *stacks);
 
 #endif

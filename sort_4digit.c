@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:23:02 by flima             #+#    #+#             */
-/*   Updated: 2024/12/17 15:12:23 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:01:18 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_4digit(t_stack_a_b *stacks)
 {
 	int	b_nb;
-	
+
 	ft_push(stacks, 'b');
 	sort_3digit(stacks, 'a');
 	b_nb = stacks->stack_b->content;

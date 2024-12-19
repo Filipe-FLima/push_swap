@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:27:35 by flima             #+#    #+#             */
-/*   Updated: 2024/12/10 18:41:54 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:03:35 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	find_max_min(t_stack_a_b *stacks, char ch)
 {
-	t_stack *head;
-	
+	t_stack	*head;
+
 	if (ch == 'a')
 		head = stacks->stack_a;
 	else
@@ -27,11 +27,11 @@ void	find_max_min(t_stack_a_b *stacks, char ch)
 void	find_max(t_stack_a_b *stacks, t_stack *head, char ch)
 {
 	int	maxnb;
-	
+
 	maxnb = head->content;
 	while (head != NULL)
 	{
-		if (maxnb > head->content)
+		if (maxnb < head->content)
 			maxnb = head->content;
 		head = head->next;
 	}
@@ -44,11 +44,11 @@ void	find_max(t_stack_a_b *stacks, t_stack *head, char ch)
 void	find_min(t_stack_a_b *stacks, t_stack *head, char ch)
 {
 	int	maxnb;
-	
+
 	maxnb = head->content;
 	while (head != NULL)
 	{
-		if (maxnb < head->content)
+		if (maxnb > head->content)
 			maxnb = head->content;
 		head = head->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:06:22 by flima             #+#    #+#             */
-/*   Updated: 2024/12/17 18:06:31 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:05:32 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 void	move_back_a(t_stack_a_b *stacks)
 {
-	while(stacks->stack_b != NULL)
+	while (stacks->stack_b != NULL)
 	{
 		find_max_min(stacks, 'a');
 		if (stacks->stack_b->content < stacks->values->min_a)
-			newmin_a(stacks);
+			newmin_a(stacks, 1);
 		else if (stacks->stack_b->content > stacks->values->max_a)
 			newmax_a(stacks);
 		else
-			middle_element(stacks); //criar essa funcao para adicionar um elemento que nao seja o max nem min
+			add_mid_element(stacks);
 	}
 	find_max_min(stacks, 'a');
-	//funcao para checar se a lista esta em ordem 
+	organize_stack_a(stacks);
 }
+
 int	find_index(t_stack_a_b *stacks, int nb, char ch)
 {
 	t_stack	*head;
 	int		i;
-	
+
 	if (ch == 'a')
 		head = stacks->stack_a;
 	else
@@ -40,7 +41,8 @@ int	find_index(t_stack_a_b *stacks, int nb, char ch)
 	while (head->next != NULL)
 	{
 		if (head->content == nb)
-			break;
+			break ;
+		i++;
 		head = head->next;
 	}
 	return (i);

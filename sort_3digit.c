@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:53:24 by flima             #+#    #+#             */
-/*   Updated: 2024/12/17 15:25:40 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/19 20:00:34 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	sort_3digit_exit(t_stack_a_b *stacks, char ch)
 	cases(top_mid_bot, stacks, ch);
 	free_stack(&stacks->stack_a);
 	exit(0);
-	
 }
 
 void	cases(int *TMB, t_stack_a_b *stcks, char ch)
