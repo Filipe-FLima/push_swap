@@ -24,7 +24,7 @@ void	ft_sorting(t_stack_a_b *stacks)
 		sort_4digit(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	sort_Abovefour(stacks);
+	sort_Abovefive(stacks);
 	sort_3digit(stacks, 'a');
 	move_back_a(stacks);
 }

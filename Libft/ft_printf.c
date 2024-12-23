@@ -30,7 +30,7 @@ static int	print_conversion(va_list args, const char *format)
 	else if (*format == 'u')
 		n = ft_putunsig_n(va_arg(args, unsigned int));
 	else if (*format == 'p')
-		n = ptr_tohex(va_arg(args, uintptr_t));
+		n = ptr_tohex(va_arg(args, unsigned long));
 	else if (*format == 'X' || *format == 'x')
 		n = dec_tohex((va_arg(args, int)), format);
 	return (n);

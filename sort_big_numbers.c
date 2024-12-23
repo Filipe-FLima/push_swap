@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    sort_Abovefour(t_stack_a_b *stacks)
+void    sort_Abovefive(t_stack_a_b *stacks)
 {
     t_moves     *moves;
     t_cheap     *cheap;
@@ -23,12 +23,12 @@ void    sort_Abovefour(t_stack_a_b *stacks)
     values = ft_calloc(1, sizeof(t_values));
     stacks->moves = moves;
     stacks->cheapest = cheap;
-    stacks->values;
-    while (count_nodes(stacks->stack_a > 3))
+    stacks->values = values;
+    while (count_nodes(stacks->stack_a) > 3)
     {
-        find_max_min(stacks, 'b'); //done
+        find_max_min(stacks, 'b');
         get_cheapest_moves(stacks);
-        do_moves(stacks); //done
+        do_moves(stacks);
     }
 }
 

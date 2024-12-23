@@ -123,7 +123,16 @@ void	find_max_min(t_stack_a_b *stacks, char ch);
 void	newmax_a(t_stack_a_b *stacks);
 void	count_ra_rra_max(t_stack_a_b *stacks, int i, int size);
 void	add_mid_element(t_stack_a_b *stacks);
-int		serch_next_element(t_stack_a_b *stacks, int topb);
+int		search_next_element_a(t_stack_a_b *stacks, int top);
 void	organize_stack_a(t_stack_a_b *stacks);
-
+//move to stack b
+void    sort_abovefive(t_stack_a_b *stacks);
+void    do_moves(t_stack_a_b *stacks);
+void    get_cheapest_moves(t_stack_a_b *stacks);\
+void    check_double_moves(t_stack_a_b *stacks);
+void    get_lowest_cost(t_stack_a_b *stacks, int i);
+void	cost_top_stack_a(t_stack_a_b *stacks, t_stack *head_a, int i);
+void	price_maxontop_stack_b(t_stack_a_b *stacks);
+void    price_midontop_stack_b(t_stack_a_b *stacks, int topA);
+int    search_next_element_b(t_stack_a_b *stacks, int topA);
 #endif

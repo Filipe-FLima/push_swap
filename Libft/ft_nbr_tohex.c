@@ -27,7 +27,7 @@ static int	str_hexlen(uintptr_t n)
 	return (len);
 }
 
-int	ptr_tohex(uintptr_t nbr)
+int	ptr_tohex(unsigned long nbr)
 {
 	int		len;
 	char	*str;

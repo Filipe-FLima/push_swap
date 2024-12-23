@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -ILibft
 
 
@@ -22,6 +22,7 @@ SRCS = check_input_error.c  push_swap.c manage_list.c moves_push.c \
 		moves_reverse_rotate.c  moves_rotate.c moves_swap.c sort_3digit.c \
 		check_sorted.c ft_quoted_arg.c sort_4digit.c ft_sorting.c free_all.c \
 		add_newmax_a.c add_newmin_a.c check_min_max.c move_back_a.c add_mid_element.c \
+		get_cheapest.c get_total_cost.c sort_big_numbers.c
 		
 		
 
@@ -40,11 +41,11 @@ $(NAME): $(LIBFT) $(OBJS)
 
 clean:
 	make -C $(LIBFT_DIR) clean
-	rm -f $(OBJS)
+	rm $(OBJS)
 
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
+	rm $(NAME)
 
 re: fclean all
 

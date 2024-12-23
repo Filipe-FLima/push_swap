@@ -15,8 +15,10 @@
 void	free_all(t_stack_a_b *stacks)
 {
 	free_stack(&stacks->stack_a);
-	free_stack(&stacks->stack_a);
+	free_stack(&stacks->stack_b);
 	free(stacks->values);
+	free(stacks->moves);
+	free(stacks->cheapest);
 }
 
 void	free_quoted_argv(char **argv)

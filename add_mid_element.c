@@ -18,7 +18,7 @@ void	add_mid_element(t_stack_a_b *stacks)
 	int	size;
 	int	next_element;
 
-	next_element = serch_next_element(stacks, stacks->stack_b->content);
+	next_element = search_next_element_a(stacks, stacks->stack_b->content);
 	if (stacks->stack_a->content != next_element)
 	{
 		i = find_index(stacks, next_element, 'a');
@@ -29,7 +29,7 @@ void	add_mid_element(t_stack_a_b *stacks)
 	ft_push(stacks, 'a');
 }
 
-int	serch_next_element(t_stack_a_b *stacks, int topb)
+int	search_next_element_a(t_stack_a_b *stacks, int top)
 {
 	int		index;
 	t_stack	*head_a;
@@ -37,14 +37,14 @@ int	serch_next_element(t_stack_a_b *stacks, int topb)
 	index = 0;
 	while (index == 0)
 	{
-		topb++;
+		top++;
 		head_a = stacks->stack_a;
 		while (head_a != NULL)
 		{
-			if (head_a->content == topb)
+			if (head_a->content == top)
 				index = 1;
 			head_a = head_a->next;
 		}
 	}
-	return (topb);
+	return (top);
 }

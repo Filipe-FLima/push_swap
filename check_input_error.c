@@ -56,7 +56,7 @@ void	check_int_size(char **av)
 	while (av[i])
 	{
 		size = ft_atol(av[i]);
-		if (size < INTMIN || size > INTMAX)
+		if (size < INT_MIN || size > INT_MAX)
 			print_error_exit();
 		i++;
 	}
