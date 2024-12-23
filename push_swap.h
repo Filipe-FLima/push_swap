@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "Libft/libft.h"
+# include <limits.h>
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
@@ -26,9 +27,11 @@ typedef struct s_stack
 
 typedef struct s_stack_a_b
 {
-	struct s_stack	*stack_a;
-	struct s_stack	*stack_b;
-	struct s_values	*values;
+	struct s_stack		*stack_a;
+	struct s_stack		*stack_b;
+	struct s_values		*values;
+	struct s_moves		*moves;
+	struct s_cheap	*cheapest;
 }					t_stack_a_b;
 
 typedef struct s_values
@@ -38,6 +41,39 @@ typedef struct s_values
 	int				max_b;
 	int				min_b;
 }					t_values;
+
+typedef struct s_moves
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss; //checar se tem ss
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_moves;
+
+typedef struct s_cheap
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_cheap;
+
 
 //list management
 t_stack	*new_node(int nb);

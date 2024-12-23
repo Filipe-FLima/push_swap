@@ -22,10 +22,9 @@ void	ft_sorting(t_stack_a_b *stacks)
 		sort_3digit_exit(stacks, 'a');
 	if (count_nodes(stacks->stack_a) == 4)
 		sort_4digit(stacks);
-	while (count_nodes(stacks->stack_a) > 3) //para test
-		ft_push(stacks, 'b');
-	//ft_push(stacks, 'b');
-	//fucao para colocar tudo em b sorted ate que a size = 3;
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	sort_Abovefour(stacks);
 	sort_3digit(stacks, 'a');
 	move_back_a(stacks);
 }
