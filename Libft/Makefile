@@ -6,13 +6,13 @@
 #    By: flima <flima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 21:12:39 by flima             #+#    #+#              #
-#    Updated: 2024/12/05 18:33:18 by flima            ###   ########.fr        #
+#    Updated: 2024/12/24 13:04:36 by flima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC= gcc
+CC= cc
 
 CFLAGS = -Wall -Wextra -Werror
 

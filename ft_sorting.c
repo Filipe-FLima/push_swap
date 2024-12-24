@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:47:10 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:02:50 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/24 13:06:22 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_sorting(t_stack_a_b *stacks)
 		sort_4digit(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	sort_Abovefive(stacks);
+	sort_abovefive(stacks);
 	sort_3digit(stacks, 'a');
 	move_back_a(stacks);
 }

@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 19:59:27 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/24 14:31:43 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include "Libft/libft.h"
 # include <limits.h>
-
-# define INTMAX 2147483647
-# define INTMIN -2147483648
 
 typedef struct s_stack
 {
@@ -31,7 +28,7 @@ typedef struct s_stack_a_b
 	struct s_stack		*stack_b;
 	struct s_values		*values;
 	struct s_moves		*moves;
-	struct s_cheap	*cheapest;
+	struct s_cheap		*cheapest;
 }					t_stack_a_b;
 
 typedef struct s_values
@@ -47,7 +44,7 @@ typedef struct s_moves
 	int					cost;
 	int					sa;
 	int					sb;
-	int					ss; //checar se tem ss
+	int					ss;
 	int					pa;
 	int					pb;
 	int					ra;
@@ -73,7 +70,6 @@ typedef struct s_cheap
 	int					rrb;
 	int					rrr;
 }						t_cheap;
-
 
 //list management
 t_stack	*new_node(int nb);
@@ -126,13 +122,13 @@ void	add_mid_element(t_stack_a_b *stacks);
 int		search_next_element_a(t_stack_a_b *stacks, int top);
 void	organize_stack_a(t_stack_a_b *stacks);
 //move to stack b
-void    sort_abovefive(t_stack_a_b *stacks);
-void    do_moves(t_stack_a_b *stacks);
-void    get_cheapest_moves(t_stack_a_b *stacks);\
-void    check_double_moves(t_stack_a_b *stacks);
-void    get_lowest_cost(t_stack_a_b *stacks, int i);
+void	sort_abovefive(t_stack_a_b *stacks);
+void	do_moves(t_stack_a_b *stacks);
+void	get_cheapest_moves(t_stack_a_b *stacks);
+void	check_double_moves(t_stack_a_b *stacks);
+void	get_lowest_cost(t_stack_a_b *stacks, int i);
 void	cost_top_stack_a(t_stack_a_b *stacks, t_stack *head_a, int i);
 void	price_maxontop_stack_b(t_stack_a_b *stacks);
-void    price_midontop_stack_b(t_stack_a_b *stacks, int topA);
-int    search_next_element_b(t_stack_a_b *stacks, int topA);
+void	price_midontop_stack_b(t_stack_a_b *stacks, int topA);
+int		search_next_element_b(t_stack_a_b *stacks, int topA);
 #endif

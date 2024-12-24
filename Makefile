@@ -6,13 +6,13 @@
 #    By: flima <flima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 15:44:14 by flima             #+#    #+#              #
-#    Updated: 2024/12/19 15:17:56 by flima            ###   ########.fr        #
+#    Updated: 2024/12/24 13:04:26 by flima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g -ILibft
 
 
@@ -41,11 +41,11 @@ $(NAME): $(LIBFT) $(OBJS)
 
 clean:
 	make -C $(LIBFT_DIR) clean
-	rm $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
