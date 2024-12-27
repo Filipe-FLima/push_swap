@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sorted.c                                     :+:      :+:    :+:   */
+/*   free_all_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:08:50 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:15:48 by flima            ###   ########.fr       */
+/*   Created: 2024/12/10 18:49:10 by flima             #+#    #+#             */
+/*   Updated: 2024/12/27 17:32:19 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-bool	ft_issorted(t_stack_a_b *stacks)
+void	free_all_bonus(t_stack_a_b *stacks)
 {
-	t_stack	*head;
+	free_stack_bonus(&stacks->stack_a);
+	free_stack_bonus(&stacks->stack_b);
+}
 
-	head = stacks->stack_a;
-	while (head->next != NULL)
+void	free_stack_bonus(t_stack **list)
+{
+	t_stack	*tmp;
+
+	while (*list != NULL)
 	{
-		if (head->content > head->next->content)
-			return (false);
-		head = head->next;
+		tmp = (*list)->next;
+		free(*list);
+		*list = tmp;
 	}
-	return (true);
+}
+void	free_error_exit(t_stack_a_b *stacks, char *move)
+{
+	free_all_bonus(stacks);
+	free(move);
+	print_error_exit_bonus();
+	exit(0);
 }

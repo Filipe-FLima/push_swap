@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_quoted_arg_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:08:50 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:15:48 by flima            ###   ########.fr       */
+/*   Created: 2024/12/09 20:17:36 by flima             #+#    #+#             */
+/*   Updated: 2024/12/27 17:12:21 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-bool	ft_issorted(t_stack_a_b *stacks)
+char	**ft_quoted_arg_bonus(char **argv)
+{
+	char	**tmp;
+
+	tmp = ft_split(argv[1], ' ');
+	if (tmp == NULL)
+		return (NULL);
+	return (tmp);
+}
+
+void	free_quoted_argv_bonus(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
+}
+bool	ft_issorted_bonus(t_stack_a_b *stacks)
 {
 	t_stack	*head;
 

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_error.c                                :+:      :+:    :+:   */
+/*   check_error_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:01:56 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/27 17:32:45 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-void	check_erros(char **av)
+void	check_erros_bonus(char **av)
 {
-	check_if_digit(av);
-	check_int_size(av);
+	check_if_digit_bonus(av);
+	check_int_size_bonus(av);
 }
 
-void	check_if_digit(char **av)
+void	check_if_digit_bonus(char **av)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ void	check_if_digit(char **av)
 	{
 		j = 0;
 		if (av[i][j] == '\0')
-			print_error_exit();
+			print_error_exit_bonus();
 		while (j < (int)ft_strlen(av[i]))
 		{
 			if (!ft_isdigit(av[i][j]))
@@ -39,7 +39,7 @@ void	check_if_digit(char **av)
 					j++;
 					continue ;
 				}
-				print_error_exit();
+				print_error_exit_bonus();
 			}
 			j++;
 		}
@@ -47,7 +47,7 @@ void	check_if_digit(char **av)
 	}
 }
 
-void	check_int_size(char **av)
+void	check_int_size_bonus(char **av)
 {
 	long	size;
 	int		i;
@@ -57,12 +57,12 @@ void	check_int_size(char **av)
 	{
 		size = ft_atol(av[i]);
 		if (size < INT_MIN || size > INT_MAX)
-			print_error_exit();
+			print_error_exit_bonus();
 		i++;
 	}
 }
 
-void	check_duplicate(t_stack *listA)
+void	check_duplicate_bonus(t_stack *listA)
 {
 	int		check;
 	t_stack	*tmp;
@@ -79,8 +79,8 @@ void	check_duplicate(t_stack *listA)
 				check += 1;
 			if (check == 2)
 			{
-				free_stack(&to_free);
-				print_error_exit();
+				free_stack_bonus(&to_free);
+				print_error_exit_bonus();
 			}
 			tmp = tmp->next;
 		}
@@ -88,7 +88,7 @@ void	check_duplicate(t_stack *listA)
 	}
 }
 
-void	print_error_exit(void)
+void	print_error_exit_bonus(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(0);

@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/24 14:31:43 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/27 15:16:07 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "Libft/libft.h"
-# include <limits.h>
 
 typedef struct s_stack
 {
@@ -76,7 +75,6 @@ t_stack	*new_node(int nb);
 t_stack	*creat_stack(char **argv);
 int		count_nodes(t_stack *list);
 t_stack	*last_node(t_stack *head);
-t_stack	*creat_stack_quoted(t_stack *head, char **args);
 char	**ft_quoted_arg(char **argv);
 //free functions
 void	free_quoted_argv(char **argv);
@@ -100,7 +98,7 @@ void	check_if_digit(char **av);
 void	check_int_size(char **av);
 void	print_error_exit(void);
 void	check_duplicate(t_stack *listA);
-bool	ft_issorted(t_stack_a_b *stacks, char ch);
+bool	ft_issorted(t_stack_a_b *stacks);
 //sorting functions
 void	ft_sorting(t_stack_a_b *stacks);
 void	sort_3digit(t_stack_a_b *stacks, char ch);

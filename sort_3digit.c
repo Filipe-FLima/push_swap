@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:53:24 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:00:34 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/27 15:17:04 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	sort_3digit_exit(t_stack_a_b *stacks, char ch)
 	int		top_mid_bot[3];
 	t_stack	*head;
 
-	if (ch == 'a')
-		head = stacks->stack_a;
-	else
-		head = stacks->stack_b;
+	head = stacks->stack_a;
 	top_mid_bot[0] = head->content;
 	top_mid_bot[1] = head->next->content;
 	top_mid_bot[2] = head->next->next->content;
@@ -66,7 +63,7 @@ void	cases(int *TMB, t_stack_a_b *stcks, char ch)
 
 void	sort_2digit(t_stack_a_b *stacks)
 {
-	if (!ft_issorted(stacks, 'a'))
+	if (!ft_issorted(stacks))
 		ft_swap(stacks, 'a');
 	free_stack(&stacks->stack_a);
 	exit(0);

@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:47:10 by flima             #+#    #+#             */
-/*   Updated: 2024/12/24 13:06:22 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/27 15:24:22 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_sorting(t_stack_a_b *stacks)
 {
-	if (ft_issorted(stacks, 'a'))
-		return ;
+	if (ft_issorted(stacks))
+	{
+		free_stack(&stacks->stack_a);
+		exit(0);
+	}
 	if (count_nodes(stacks->stack_a) == 2)
 		sort_2digit(stacks);
 	if (count_nodes(stacks->stack_a) == 3)
