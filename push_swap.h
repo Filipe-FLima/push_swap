@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:16:07 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:31:31 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,10 @@ void	push_a(t_stack_a_b *stacks);
 void	first_node_b(t_stack_a_b *stacks);
 void	push_b(t_stack_a_b *stacks);
 //error functions
-void	check_erros(char **av);
-void	check_if_digit(char **av);
-void	check_int_size(char **av);
-void	print_error_exit(void);
+void	check_erros(char **av, int argc);
+void	check_if_digit(char **av, int ac);
+void	check_int_size(char **av, int ac);
+void	print_error_exit(int check_to_free, char **quoted_argv);
 void	check_duplicate(t_stack *listA);
 bool	ft_issorted(t_stack_a_b *stacks);
 //sorting functions

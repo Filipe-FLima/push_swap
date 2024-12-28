@@ -6,19 +6,19 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:01:56 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:29:25 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_erros(char **av)
+void	check_erros(char **av, int ac)
 {
-	check_if_digit(av);
-	check_int_size(av);
+	check_if_digit(av, ac);
+	check_int_size(av, ac);
 }
 
-void	check_if_digit(char **av)
+void	check_if_digit(char **av, int ac)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ void	check_if_digit(char **av)
 	{
 		j = 0;
 		if (av[i][j] == '\0')
-			print_error_exit();
+			print_error_exit(ac, av);
 		while (j < (int)ft_strlen(av[i]))
 		{
 			if (!ft_isdigit(av[i][j]))
@@ -39,7 +39,7 @@ void	check_if_digit(char **av)
 					j++;
 					continue ;
 				}
-				print_error_exit();
+				print_error_exit(ac, av);
 			}
 			j++;
 		}
@@ -47,7 +47,7 @@ void	check_if_digit(char **av)
 	}
 }
 
-void	check_int_size(char **av)
+void	check_int_size(char **av, int ac)
 {
 	long	size;
 	int		i;
@@ -57,7 +57,7 @@ void	check_int_size(char **av)
 	{
 		size = ft_atol(av[i]);
 		if (size < INT_MIN || size > INT_MAX)
-			print_error_exit();
+			print_error_exit(ac, av);
 		i++;
 	}
 }
@@ -80,7 +80,7 @@ void	check_duplicate(t_stack *listA)
 			if (check == 2)
 			{
 				free_stack(&to_free);
-				print_error_exit();
+				print_error_exit(0, NULL);
 			}
 			tmp = tmp->next;
 		}
@@ -88,8 +88,10 @@ void	check_duplicate(t_stack *listA)
 	}
 }
 
-void	print_error_exit(void)
+void	print_error_exit(int check_to_free, char **quoted_argv)
 {
+	if (check_to_free == 2)
+		free_quoted_argv(quoted_argv);
 	ft_putstr_fd("Error\n", 2);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 #    By: flima <flima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 15:44:14 by flima             #+#    #+#              #
-#    Updated: 2024/12/27 18:02:34 by flima            ###   ########.fr        #
+#    Updated: 2024/12/28 15:02:32 by flima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,16 +45,16 @@ $(NAME): $(LIBFT) $(OBJS)
 
 bonus: $(NAME_BONUS)
 
-$(NAME_BONUS): $(BONUS_OBJS) $(Libft)
+$(NAME_BONUS): $(LIBFT) $(BONUS_OBJS)
 	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(NAME_BONUS)
 
 clean:
 	make -C $(LIBFT_DIR) clean
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
 
 re: fclean all
 

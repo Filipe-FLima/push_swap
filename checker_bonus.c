@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:24:12 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 17:40:05 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/28 15:05:50 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	check_moves(t_stack_a_b *stacks)
 			break ;
 		do_move_bonus(stacks, move);
 		free(move);
+		move = NULL;
 	}
 	if (ft_issorted_bonus(stacks) && count_nodes_bonus(stacks->stack_b) == 0)
 		ft_printf("OK\n");
@@ -69,7 +70,7 @@ int	main(int argc, char **argv)
 		argv = ft_quoted_arg_bonus(argv);
 	else if (argc > 2)
 		argv += 1;
-	check_erros_bonus(argv);
+	check_erros_bonus(argv, argc);
 	stacks.stack_a = creat_stack_bonus(argv);
 	if (argc == 2)
 		free_quoted_argv_bonus(argv);

@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:17:36 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 17:12:21 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/28 15:04:59 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	free_quoted_argv_bonus(char **argv)
 	}
 	free(argv);
 }
+
 bool	ft_issorted_bonus(t_stack_a_b *stacks)
 {
 	t_stack	*head;

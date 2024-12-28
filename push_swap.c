@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:24:12 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 14:48:26 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:36:37 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 		argv = ft_quoted_arg(argv);
 	else if (argc > 2)
 		argv += 1;
-	check_erros(argv);
+	check_erros(argv, argc);
 	stacks.stack_a = creat_stack(argv);
 	if (argc == 2)
 		free_quoted_argv(argv);
