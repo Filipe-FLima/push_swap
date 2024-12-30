@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:49:10 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 15:05:08 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 20:18:33 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void	free_error_exit(t_stack_a_b *stacks, char *move)
 	free_all_bonus(stacks);
 	free(move);
 	print_error_exit_bonus(0, NULL);
-	exit(0);
 }

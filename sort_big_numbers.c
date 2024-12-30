@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 22:39:37 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/24 13:20:02 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/30 13:51:58 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	sort_abovefive(t_stack_a_b *stacks)
 	t_moves		*moves;
 	t_cheap		*cheap;
 	t_values	*values;
+	int			len_a;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	cheap = ft_calloc(1, sizeof(t_cheap));
@@ -24,11 +25,13 @@ void	sort_abovefive(t_stack_a_b *stacks)
 	stacks->moves = moves;
 	stacks->cheapest = cheap;
 	stacks->values = values;
-	while (count_nodes(stacks->stack_a) > 3)
+	len_a = count_nodes(stacks->stack_a);
+	while (len_a > 3)
 	{
 		find_max_min(stacks, 'b');
-		get_cheapest_moves(stacks);
+		get_cheapest_moves(stacks, len_a);
 		do_moves(stacks);
+		len_a--;
 	}
 }
 

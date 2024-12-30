@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:17 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 14:29:25 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 20:17:00 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ void	print_error_exit(int check_to_free, char **quoted_argv)
 	if (check_to_free == 2)
 		free_quoted_argv(quoted_argv);
 	ft_putstr_fd("Error\n", 2);
-	exit(0);
+	exit(1);
 }

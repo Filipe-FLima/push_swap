@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:48:53 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 16:56:31 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/30 18:00:11 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack	*creat_stack_bonus(char **argv)
 	tmp = head;
 	while (argv[i])
 	{
-		tmp->next = new_node_bonus(atoi(argv[i++]));
+		tmp->next = new_node_bonus(ft_atoi(argv[i++]));
 		tmp = tmp->next;
 	}
 	return (head);

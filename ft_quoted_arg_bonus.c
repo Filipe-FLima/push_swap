@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:17:36 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 15:04:59 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 20:42:33 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	**ft_quoted_arg_bonus(char **argv)
 {
 	char	**tmp;
 
+	if (*argv[1] == '\0')
+		print_error_exit_bonus(0, NULL);
 	tmp = ft_split(argv[1], ' ');
 	if (tmp == NULL)
 		return (NULL);

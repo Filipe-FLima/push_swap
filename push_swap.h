@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 14:31:31 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/30 13:52:27 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	organize_stack_a(t_stack_a_b *stacks);
 //move to stack b
 void	sort_abovefive(t_stack_a_b *stacks);
 void	do_moves(t_stack_a_b *stacks);
-void	get_cheapest_moves(t_stack_a_b *stacks);
+void	get_cheapest_moves(t_stack_a_b *stacks, int len_a);
 void	check_double_moves(t_stack_a_b *stacks);
 void	get_lowest_cost(t_stack_a_b *stacks, int i);
 void	cost_top_stack_a(t_stack_a_b *stacks, t_stack *head_a, int i);

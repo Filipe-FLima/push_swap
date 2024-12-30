@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:57:07 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 13:09:09 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 21:20:33 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_push_bonus(t_stack_a_b *stacks, char ch)
 	}
 	else if (ch == 'b')
 	{
+		if (stacks->stack_a->next == NULL)
+			return ;
 		if (head_b == NULL)
 			first_node_b_bonus(stacks);
 		else

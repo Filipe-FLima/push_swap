@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:23:02 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:01:18 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 20:32:02 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,28 @@
 
 void	sort_4digit(t_stack_a_b *stacks)
 {
-	int	b_nb;
-
 	ft_push(stacks, 'b');
 	sort_3digit(stacks, 'a');
-	b_nb = stacks->stack_b->content;
-	if (b_nb < stacks->stack_a->content)
+	if (stacks->stack_b->content < stacks->stack_a->content)
 		ft_push(stacks, 'a');
-	else if (b_nb < stacks->stack_a->next->content)
+	else if (stacks->stack_b->content < stacks->stack_a->next->content)
 	{
 		ft_push(stacks, 'a');
 		ft_swap(stacks, 'a');
 	}
-	else
+	else if (stacks->stack_b->content < stacks->stack_a->next->next->content)
 	{
 		ft_reverse_rotate(stacks, 'a');
 		ft_push(stacks, 'a');
 		ft_rotate(stacks, 'a');
 		ft_rotate(stacks, 'a');
 	}
+	else
+	{
+		ft_push(stacks, 'a');
+		ft_rotate(stacks, 'a');
+	}
 	free_stack(&stacks->stack_a);
 	free_stack(&stacks->stack_b);
 	exit(0);
 }
-
-// void	sort_5digit(t_stack_a_b *stacks)
-// {
-// 	int b_nb;
-
-// 	ft_push(stacks, 'b');
-// 	ft_push(stacks, 'b');
-// 	sort_3digit(stacks, 'a');
-// 	while (stacks->stack_b != NULL)
-// 	{
-// 		b_nb = stacks->stack_b->content;
-// 	if (b_nb < stacks->stack_a->content)
-// 		ft_push(stacks, 'a');
-// 	else if (b_nb < stacks->stack_a->next->content)
-// 	{
-// 		ft_push(stacks, 'a');
-// 		ft_swap(stacks, 'a');
-// 	}
-// 	else
-// 	{
-// 		ft_reverse_rotate(stacks, 'a');
-// 		ft_push(stacks, 'a');
-// 	}
-// 	}
-// }

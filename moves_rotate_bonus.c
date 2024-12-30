@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:35:53 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 13:03:55 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 21:19:08 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ void	ft_rotate_bonus(t_stack_a_b *stacks, char ch)
 	head_a = stacks->stack_a;
 	head_b = stacks->stack_b;
 	if (ch == 'a')
+	{
+		if (head_a->next == NULL)
+			return ;
 		rotate_stack_bonus(stacks, head_a, 1);
+	}
 	else if (ch == 'b')
 	{
 		if (head_b == NULL || head_b->next == NULL)

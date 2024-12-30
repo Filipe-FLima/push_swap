@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:24:12 by flima             #+#    #+#             */
-/*   Updated: 2024/12/28 15:05:50 by flima            ###   ########.fr       */
+/*   Updated: 2024/12/29 21:35:33 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	do_move_bonus(t_stack_a_b *stacks, char *move)
 {
-	(void) stacks;
 	if (!ft_strncmp(move, "ra\n", 3))
 		ft_rotate_bonus(stacks, 'a');
 	else if (!ft_strncmp(move, "rb\n", 3))
@@ -44,7 +43,11 @@ void	do_move_bonus(t_stack_a_b *stacks, char *move)
 void	check_moves(t_stack_a_b *stacks)
 {
 	char	*move;
+	int		size_a;
 
+	size_a = count_nodes_bonus(stacks->stack_a);
+	if (size_a == 1 && count_nodes_bonus(stacks->stack_b) == 0)
+		return ;
 	while (true)
 	{
 		move = get_next_line(0);
