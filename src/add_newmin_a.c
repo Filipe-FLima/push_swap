@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   add_newmin_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:48:14 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:09:26 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/24 00:01:55 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	newmin_a(t_stack_a_b *stacks, int check)
 {
 	int	i;
 	int	size;
 
-	if (stacks->stack_a->content != stacks->values->min_a)
+	if (stacks->stack_a->index != stacks->values->min_a)
 	{
 		i = find_index(stacks, stacks->values->min_a, 'a');
 		size = count_nodes(stacks->stack_a);

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   add_newmax_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:45:43 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:10:01 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/24 00:01:08 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	newmax_a(t_stack_a_b *stacks)
 {
@@ -19,7 +19,7 @@ void	newmax_a(t_stack_a_b *stacks)
 	t_stack	*head;
 
 	head = last_node(stacks->stack_a);
-	if (head->content != stacks->values->max_a)
+	if (head->index != stacks->values->max_a)
 	{
 		i = find_index(stacks, stacks->values->max_a, 'a');
 		size = count_nodes(stacks->stack_a);

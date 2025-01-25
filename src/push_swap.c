@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:24:12 by flima             #+#    #+#             */
-/*   Updated: 2024/12/29 20:37:54 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/25 11:42:31 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -29,6 +29,5 @@ int	main(int argc, char **argv)
 	stacks.stack_b = NULL;
 	check_duplicate(stacks.stack_a);
 	ft_sorting(&stacks);
-	free_all(&stacks);
 	return (0);
 }

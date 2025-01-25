@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_4digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:23:02 by flima             #+#    #+#             */
-/*   Updated: 2024/12/29 20:32:02 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_4digit(t_stack_a_b *stacks)
 {

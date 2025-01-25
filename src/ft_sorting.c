@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sorting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:47:10 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:24:22 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/24 00:41:17 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_sorting(t_stack_a_b *stacks)
 {
@@ -25,6 +25,7 @@ void	ft_sorting(t_stack_a_b *stacks)
 		sort_3digit_exit(stacks, 'a');
 	if (count_nodes(stacks->stack_a) == 4)
 		sort_4digit(stacks);
+	yuleum_get_index(stacks->stack_a);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
 	sort_abovefive(stacks);

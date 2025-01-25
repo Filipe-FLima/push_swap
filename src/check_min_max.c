@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_min_max.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:27:35 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 20:03:35 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/24 23:49:18 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	find_max_min(t_stack_a_b *stacks, char ch)
 {
@@ -28,11 +28,11 @@ void	find_max(t_stack_a_b *stacks, t_stack *head, char ch)
 {
 	int	maxnb;
 
-	maxnb = head->content;
+	maxnb = head->index;
 	while (head != NULL)
 	{
-		if (maxnb < head->content)
-			maxnb = head->content;
+		if (maxnb < head->index)
+			maxnb = head->index;
 		head = head->next;
 	}
 	if (ch == 'a')
@@ -45,11 +45,11 @@ void	find_min(t_stack_a_b *stacks, t_stack *head, char ch)
 {
 	int	maxnb;
 
-	maxnb = head->content;
+	maxnb = head->index;
 	while (head != NULL)
 	{
-		if (maxnb > head->content)
-			maxnb = head->content;
+		if (maxnb > head->index)
+			maxnb = head->index;
 		head = head->next;
 	}
 	if (ch == 'a')

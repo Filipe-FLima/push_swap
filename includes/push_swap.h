@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2024/12/30 13:52:27 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/25 11:38:48 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "Libft/libft.h"
+# include "libft.h"
 
 typedef struct s_stack
 {
 	int				content;
+	int				index;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -82,7 +83,6 @@ void	free_stack(t_stack **list);
 void	free_all(t_stack_a_b *stacks);
 //moves functions
 void	ft_swap(t_stack_a_b *stacks, char ch);
-void	swap_content(t_stack *head, int check);
 void	ft_rotate(t_stack_a_b *stacks, char ch);
 void	rotate_stack(t_stack_a_b *stacks, t_stack *head, int chk, int chk_stck);
 void	ft_reverse_rotate(t_stack_a_b *stacks, char ch);
@@ -119,6 +119,7 @@ void	count_ra_rra_max(t_stack_a_b *stacks, int i, int size);
 void	add_mid_element(t_stack_a_b *stacks);
 int		search_next_element_a(t_stack_a_b *stacks, int top);
 void	organize_stack_a(t_stack_a_b *stacks);
+void	yuleum_get_index(t_stack *stack_a);
 //move to stack b
 void	sort_abovefive(t_stack_a_b *stacks);
 void	do_moves(t_stack_a_b *stacks);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_reverse_rotate.c                             :+:      :+:    :+:   */
+/*   moves_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:57:47 by flima             #+#    #+#             */
-/*   Updated: 2024/12/02 15:54:57 by flima            ###   ########.fr       */
+/*   Created: 2024/12/01 18:35:53 by flima             #+#    #+#             */
+/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	ft_reverse_rotate(t_stack_a_b *stacks, char ch)
+void	ft_rotate(t_stack_a_b *stacks, char ch)
 {
 	t_stack	*head_a;
 	t_stack	*head_b;
@@ -20,39 +20,39 @@ void	ft_reverse_rotate(t_stack_a_b *stacks, char ch)
 	head_a = stacks->stack_a;
 	head_b = stacks->stack_b;
 	if (ch == 'a')
-		rev_rotate(stacks, head_a, 1, 3);
+		rotate_stack(stacks, head_a, 1, 3);
 	else if (ch == 'b')
 	{
 		if (head_b == NULL || head_b->next == NULL)
 			return ;
-		rev_rotate(stacks, head_b, 2, 4);
+		rotate_stack(stacks, head_b, 2, 4);
 	}
 	else
 	{
 		if (head_a == NULL || head_a->next == NULL
 			|| head_b == NULL || head_b->next == NULL)
 			return ;
-		rev_rotate(stacks, head_a, 0, 3);
-		rev_rotate(stacks, head_b, 0, 4);
-		ft_printf("rrr\n");
+		rotate_stack(stacks, head_a, 0, 3);
+		rotate_stack(stacks, head_b, 0, 4);
+		ft_printf("rr\n");
 	}
 }
 
-void	rev_rotate(t_stack_a_b *stacks, t_stack *hd, int chk, int chk_stk)
+void	rotate_stack(t_stack_a_b *stacks, t_stack *head, int chk, int chk_stck)
 {
-	t_stack	*head_tmp;
+	t_stack	*tmp;
 
-	head_tmp = hd;
-	while (hd->next->next != NULL)
-		hd = hd->next;
-	if (chk_stk == 3)
-		stacks->stack_a = hd->next;
-	else if (chk_stk == 4)
-		stacks->stack_b = hd->next;
-	hd->next->next = head_tmp;
-	hd->next = NULL;
+	tmp = head;
+	if (chk_stck == 3)
+		stacks->stack_a = head->next;
+	else if (chk_stck == 4)
+		stacks->stack_b = head->next;
+	while (head->next != NULL)
+		head = head->next;
+	head->next = tmp;
+	tmp->next = NULL;
 	if (chk == 1)
-		ft_printf("rra\n");
+		ft_printf("ra\n");
 	else if (chk == 2)
-		ft_printf("rrb\n");
+		ft_printf("rb\n");
 }

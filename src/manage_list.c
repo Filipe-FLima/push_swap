@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   manage_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:48:53 by flima             #+#    #+#             */
-/*   Updated: 2024/12/19 19:59:43 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_stack	*new_node(int nb)
 {

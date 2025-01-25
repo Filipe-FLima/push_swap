@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:53:24 by flima             #+#    #+#             */
-/*   Updated: 2024/12/27 15:17:04 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_3digit(t_stack_a_b *stacks, char ch)
 {

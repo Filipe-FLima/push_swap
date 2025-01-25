@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_cheapest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 23:24:15 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/30 14:33:14 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/24 00:22:03 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	get_cheapest_moves(t_stack_a_b *stacks, int len_a)
 {
@@ -22,11 +22,11 @@ void	get_cheapest_moves(t_stack_a_b *stacks, int len_a)
 	while (i < len_a)
 	{
 		cost_top_stack_a(stacks, head_a, i);
-		if (head_a->content > stacks->values->max_b || \
-			head_a->content < stacks->values->min_b)
+		if (head_a->index > stacks->values->max_b || \
+			head_a->index < stacks->values->min_b)
 			price_maxontop_stack_b(stacks);
 		else
-			price_midontop_stack_b(stacks, head_a->content);
+			price_midontop_stack_b(stacks, head_a->index);
 		check_double_moves(stacks);
 		get_lowest_cost(stacks, i);
 		head_a = head_a->next;

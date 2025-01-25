@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_total_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:06:22 by flima             #+#    #+#             */
-/*   Updated: 2024/12/24 13:48:30 by flima            ###   ########.fr       */
+/*   Updated: 2025/01/23 22:52:25 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	cost_top_stack_a(t_stack_a_b *stacks, t_stack *head_a, int i)
 {
@@ -69,14 +69,14 @@ void	price_midontop_stack_b(t_stack_a_b *stacks, int topA)
 {
 	int	i;
 	int	len_b;
-	int	next_element;
+	int	next_index;
 
 	stacks->moves->rb = 0;
 	stacks->moves->rrb = 0;
-	next_element = search_next_element_b(stacks, topA);
-	if (stacks->stack_b->content == next_element)
+	next_index = search_next_element_b(stacks, topA);
+	if (stacks->stack_b->index == next_index)
 		return ;
-	i = find_index(stacks, next_element, 'b');
+	i = find_index(stacks, next_index, 'b');
 	len_b = count_nodes(stacks->stack_b);
 	if (len_b % 2 == 0)
 	{
@@ -106,7 +106,7 @@ int	search_next_element_b(t_stack_a_b *stacks, int topA)
 		topA--;
 		while (head_b != NULL)
 		{
-			if (head_b->content == topA)
+			if (head_b->index == topA)
 				i = 1;
 			head_b = head_b->next;
 		}
