@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_4digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:23:02 by flima             #+#    #+#             */
-/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
+/*   Updated: 2025/01/29 15:53:02 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sort_4digit(t_stack_a_b *stacks)
 	else if (stacks->stack_b->content < stacks->stack_a->next->content)
 	{
 		ft_push(stacks, 'a');
-		ft_swap(stacks, 'a');
+		ft_swap(stacks);
 	}
 	else if (stacks->stack_b->content < stacks->stack_a->next->next->content)
 	{

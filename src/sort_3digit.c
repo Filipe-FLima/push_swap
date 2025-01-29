@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:53:24 by flima             #+#    #+#             */
-/*   Updated: 2025/01/23 22:43:50 by filipe           ###   ########.fr       */
+/*   Updated: 2025/01/29 15:52:43 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ void	sort_3digit_exit(t_stack_a_b *stacks, char ch)
 void	cases(int *TMB, t_stack_a_b *stcks, char ch)
 {
 	if (TMB[0] > TMB[1] && TMB[1] < TMB[2] && TMB[2] > TMB[0])
-		ft_swap(stcks, ch);
+		ft_swap(stcks);
 	else if (TMB[0] > TMB[1] && TMB[1] > TMB[2] && TMB[2] < TMB[0])
 	{
-		ft_swap(stcks, ch);
+		ft_swap(stcks);
 		ft_reverse_rotate(stcks, ch);
 	}
 	else if (TMB[0] > TMB[1] && TMB[1] < TMB[2] && TMB[2] < TMB[0])
 		ft_rotate(stcks, ch);
 	else if (TMB[0] < TMB[1] && TMB[1] > TMB[2] && TMB[2] > TMB[0])
 	{
-		ft_swap(stcks, ch);
+		ft_swap(stcks);
 		ft_rotate(stcks, ch);
 	}
 	else if (TMB[0] < TMB[1] && TMB[1] > TMB[2] && TMB[2] < TMB[0])
@@ -64,7 +64,7 @@ void	cases(int *TMB, t_stack_a_b *stcks, char ch)
 void	sort_2digit(t_stack_a_b *stacks)
 {
 	if (!ft_issorted(stacks))
-		ft_swap(stacks, 'a');
+		ft_swap(stacks);
 	free_stack(&stacks->stack_a);
 	exit(0);
 }

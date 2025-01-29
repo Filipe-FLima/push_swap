@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:49:45 by flima             #+#    #+#             */
-/*   Updated: 2025/01/25 11:38:48 by filipe           ###   ########.fr       */
+/*   Updated: 2025/01/29 15:52:17 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	free_quoted_argv(char **argv);
 void	free_stack(t_stack **list);
 void	free_all(t_stack_a_b *stacks);
 //moves functions
-void	ft_swap(t_stack_a_b *stacks, char ch);
+void	ft_swap(t_stack_a_b *stacks);
 void	ft_rotate(t_stack_a_b *stacks, char ch);
 void	rotate_stack(t_stack_a_b *stacks, t_stack *head, int chk, int chk_stck);
 void	ft_reverse_rotate(t_stack_a_b *stacks, char ch);
